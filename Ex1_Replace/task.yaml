@@ -1,0 +1,66 @@
+accessible: true
+author: Ivan Wandja, Valentin Ingenzi, Raissa Hirwa-Mihigo
+categories: []
+contact_url: ''
+context: |-
+    Vous êtes demandés de créer un programme qui vise à remplacer certaines chaînes de caractère non-vide ou une lettre dans une chaîne de caractère par une autre chaîne de caractère non-vide ou une autre lettre.
+
+    Pour rappel:
+        Une chaîne de caractére peut être une suite des mots ou une suite de caractères comme "?","A","12","zEyth12" etc.
+
+    Exemples:
+
+    .. code-block :: python
+
+        text = "Welcome to my bedroom"
+        char_1 = "bed"
+        char_2 = "bath"
+        replace(text, char_1, char_2) #retourne "Welcome to my bathroom"
+
+        other_text =  "Is it worth to live ? "
+        other_char_1 = "i"
+        other_char_2 = "o"
+        replace(other_text, other_char_1, other_char_2) #retourne "Is ot worth to love ? "
+
+    Attention:
+        Notez que si vous décidez de remplacer une lettre particulière dans une phrase, vous devrez sélectionner le mot entier car il peut affecter d'autres mots s'il n'est pas sélectionné.
+
+        N'utilisez pas la fonction intégrée replace.
+environment_id: pyjavacpp
+environment_parameters:
+    limits:
+        memory: '100'
+        hard_time: ''
+        time: '30'
+    run_cmd: ''
+environment_type: docker
+evaluate: last
+file: ''
+groups: false
+input_random: '0'
+name: Replace
+network_grading: false
+order: 0
+problems:
+    q1:
+        language: python
+        name: Ecrivez le corps de la fonction suivante
+        header: |-
+            .. code-block:: python
+
+                def replace(text, char_1, char_2):
+                    """
+                    Pre  : - text   : est la chaîne de caractère à modifier
+                           - char_1 : est la chaîne de caractère ou un caractère ou une lettre à remplacer dans le texte.
+                           - char_2 : est la chaîne de caractère ou un caractère ou encore une lettre qui remplace char_1
+
+                    Post : Retourner un texte modifié selon les parametres
+
+                    """
+        default: '#ENTREZ VOTRE CODE ICI'
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

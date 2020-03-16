@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+def replace(text, char_1, char_2):
+@    @q1@@

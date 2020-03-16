@@ -1,0 +1,73 @@
+accessible: true
+author: Hirwa Mihigo Olyvia, Ivan Wandja, Ingenzi Vany
+categories: []
+contact_url: ''
+context: |-
+    Ezekiel fête aujourd'hui ses 20 ans. Le soir, dans sa chambre, en ouvrant des cadeaux , quelqu'un lui a offert une clé USB comme cadeaux. Sur cette clé USB, se trouve un fichier "Ezekiel's siblings", mais Ezekiel ne sait pas comment ouvrir ce fichier, et de plus il ne comprend pas l'anglais.
+
+    Comme tu es son meilleur ami et que tu étudie l'informatique à l'Université, tu lui propose de créer un programme qui va ouvrir et lire le fichier qui est sur la clé USB.
+
+    De plus, comme tu comprends l'anglais parfaitement, en lisant le titre, tu as directement compris que Ezekiel n'était pas fils unique, et qu'il a des frères et/ou soeurs.
+    Dans le fichier, les noms, prénoms et âges sont sous la format suivant:
+
+    .. code-block:: python
+
+        Hirwa!Raissa!18
+        Wandja!Yvan!20
+        Ingenzi!Vany!19
+
+
+    La fonction que tu vas créer doit retourner une liste de prénom et l'âge de chacun dans un tuple et en ordre croissant des âges.
+
+    .. code-block:: python
+
+        Pour le fichier au-dessus, la fonction doit retourner:
+        [(Raissa,18),(Vany,19),(Yvan,20)]
+
+
+    Attention:
+
+    - Si le fichier n'existe pas, la fonction doit lever un FileNotFoundError
+
+    - Si la liste est vide, et que c'était juste une blague, la fonction doit lever un ValueError
+
+    - Si le contenu du fichier est écrit dans le mauvais format, la fonction doit retourner " Le fichier contient des erreurs et donc ne peut pas être lu."
+environment_id: pyjavacpp
+environment_parameters:
+    limits:
+        memory: '100'
+        hard_time: ''
+        time: '30'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: Siblings
+network_grading: false
+order: 1
+problems:
+    q:
+        default: '#ECRIVEZ LE CORPS DE LA FONCTION'
+        language: python
+        optional: 'on'
+        header: |+
+            .. code-block:: python
+
+                def siblings(filename):
+                    """
+                    pre: filename(le nom du fichier)
+                    post:Si le fichier n'est pas vide, la foction doit retourner une liste des prénoms et ages (dans un tuple) en ordre croissant des âges.
+                         Si le fichier est vide, la fonction doit retourner une erreur de ValueError
+                         Si le contenu du fichier est dans le mauvais format, la fonction doit retourner "Le fichier contient des erreurs et donc ne peut pas être lu"
+                         Si le fichier n'existe pas, la fonction doit lever un FileNotFoundError
+                    """
+
+        name: Siblings
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0

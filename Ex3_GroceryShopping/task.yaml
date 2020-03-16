@@ -1,0 +1,190 @@
+accessible: true
+author: Ingenzi Vany,Hirwa Mihigo Olyvia, Ivan Wandja
+categories: []
+contact_url: ''
+context: |-
+    La meilleure façon d'utiliser la technologie est de faciliter nos tâches quotidiennes ...
+
+
+    Votre maman vous a demandé de faire les courses et elle vous a envoyé une liste de choses à acheter, mais comme vous êtes un geek, vous aimeriez passer le moins de temps à l'extérieur pour que vous puissiez rentrer chez vous et continuer à faire tout ce que vous faites avec votre ordinateur ...
+
+    Par conséquent, vous souhaitez coder un programme à qui vous donner une liste d'articles et renvoie une liste triée des produits disponibles dans la boutique, par ordre croissant des coordonnées des rayons dans lequels ils se trouvent. L'avantage de ce programme est que vous ne faites pas de va-et-vient pour rien, et rappelez-vous que faire les courses n'est pas votre hobby mais que vous aimez votre maman ...
+
+    par exemple:
+
+    .. code-block:: python
+
+        shelf_1 = Shelf([Product('wallet',1)],1) #Nous créons un rayon, avec un produit, un 'wallet' avec un stock initial de 1.
+        #Remarquez que le rayon a comme coordonne 1. Ce qui signifie que c'est le premier rayon que vous allez voir en entrant dans le magasin.
+
+        shelf_1.add_product(Product('headphones',1)) #Nous ajoutons un autre produit dans le rayon 'shelf_1'.
+
+        shelf_2 = Shelf([Product('gsm',10)],2) #Nous créons un rayon.
+        shop = Shop([shelf_2,shelf_1]) #Ici nous creons un magasin avec 2 rayons.
+
+        print(shop.grocery_shopping(['headphones','ipad'])) #La premiere personne fais ses courses.
+        print(shop.grocery_shopping(['parfum','gsm','wallet','headphones'])) #Une autre personne fais aussi les courses dans le même magasin.
+
+    Avec les 2 derniers lignes de code, la méthode de magasin 'grocery_shopping' va imprimer:
+
+    .. code-block:: python
+
+        ['headphones']
+        #Notez que l'ipad n'a pas été ajouté à la liste car il ne se trouve dans aucune des étagères du magasin.
+
+        ['wallet','gsm']
+        #Notez que les produits sont triés, dans l'ordre croissant des coordonnées des étagères auxquelles ils appartiennent.
+        #Le 'wallet' vient avant le «gsm» car le rayon à laquelle il appartient a comme cordonée 1 tandis que le rayon du gsm a comme cordonée 2.
+        #Notez que les écouteurs n'ont pas été achetés car la quantité initiée était 1 et la personne avant les avait achetés.
+
+    Vous êtes invité à implémenter les classes et méthodes suivantes:
+environment_id: pyjavacpp
+environment_parameters:
+    limits:
+        memory: '100'
+        hard_time: ''
+        time: '30'
+    run_cmd: ''
+environment_type: docker
+evaluate: best
+file: ''
+groups: false
+input_random: '0'
+name: 'Grocery Shopping '
+network_grading: false
+order: 2
+problems:
+    q:
+        default: |
+            class Product:
+                """
+                Celui ci represente un produit.
+                """
+                def __init__(self,name,quantity):
+                    """
+                    Initialisateur de la classe Product
+                    Pre  : - name : un string, celui represente le nom du produit.
+                                    EN MINUSCULE.
+                           - quantity : la quantite du produit, la quantite >=0. Avec laquelle vous initialisez le produit.
+                    Post : - Creer l'objet.
+                    """
+                    #A implémenter
+                    pass
+
+                def buy(self):
+                    """
+                    Pre  : -
+                    Post : Diminue la quantite par 1.
+                    #ATTENTION, si la quantite est de zero. Faut pas diminuer
+                    """
+                    #A implémenter
+                    pass
+
+                def restock(self,new_quantity):
+                    """
+                    Pre  : -
+                    Post : - new_quantity devient la nouvelle quantité de l'objet si l'objet est plus grand > que la quantité actuelle.
+                    """
+                    #A implémenter
+                    pass
+
+            class Shelf:
+                """
+                Celui ci représente un rayon dans un magasin.
+                """
+                def __init__(self,lst_products,cordinate):
+                    """ Initialisateur de la classe Shelf
+                    Pre  : - lst_products : une liste des instances de la classe de Product.
+                         : - cordinate    : un naturel, [1,2, ...]. C'est l'ordre dans lequel les rayons sont places dans le magasin, donc un rayopnn avec comme cordinate 1 est le premier rayon vu par les clients rentrant dans le magasin.
+                    Post : Creer l'instance.
+                    """
+                    #self.cordinate = cordinate
+                    #self.lst_products = self.sorting_products(lst_products) #Pour le tri
+                    #A implémenter
+                    pass
+
+                def sorting_products(self,lst_products):
+                    """
+                    Pre: une lst_products d'instances de la classe Product.
+                    Post: retourne les lst_products triés par produits, qui sont triés par ordre alphabétique.
+                    """
+                    #A implémenter
+                    pass
+
+                def add_item(self,product):
+                    """
+                    Pre  : - product : product est une instance de la classe de Product
+
+                    #ATTENTION : - S'il le produit est deja dans la liste. On l'ajoute pas
+                                 - S'il existe deja un produit avec le meme nom. On l'ajoute pas non plus
+
+                    Post : - Ajouter le product dans la lst_products si aucune contrainte a été violée. Sinon elle n'est pas ajoutée.
+                           - Trie la lst_products aprés chaqu'ajout.
+                    """
+                    #A implémenter
+                    pass
+
+            class Shop:
+                """
+                Représente un magasin, comme Carrefour, LIDL, Aldi ... où nous pouvons y faire des courses.
+                """
+                def __init__(self,lst_shelves):
+                    """
+                    Pre  : - lst_shelves : une liste des instances Shelf. Elle peut etre vide si le magasin ne contient aucun rayon.
+                    Post : - Creer l'objet.
+                    """
+                    #self.lst_shelves = self.sorting_sheles(lst_shelves)
+                    #L'initialisateur utulise la methode sorting_shelves, pour trier la liste donnée.
+                    #A implémenter
+                    pass
+
+                def add_shelf(self,shelf):
+                    """
+                    Pre : - est une instance de la classe de shelf
+
+                    #ATTENTION: - Si le rayon(shelf) est déjà dans la list. Vous ne l'ajoutez pas.
+                                - S'il existe deja un rayon avec le même cordinate. Vous ne l'ajoutez pas non plus.
+
+                    Post : - Ajouter le rayon(shelf) dans la lst_shelves si aucune contrainte a été violée sinon, il n'est pas ajouté.
+                           - Trie lst_shelves aprés chaqu'ajout
+                    """
+                    #A implémenter
+                    pass
+
+                def sorting_shelves(self,lst_shelves):
+                    """
+                    Pre  : lst_rays : Liste des rayons, donc instance de la classe Shelf
+
+                    Post : Retourne la liste lst_rays des rayons triées par leur cordonne dans l'ordre croissant, ça veut dire que le premier element de la lst_rays serait le rayon avec le cordonée le plus petit... et le dernier element.
+                    """
+                    #A implémenter
+                    pass
+
+                def grocery_shopping(self,lst):
+                    """
+                    Pre  : Une liste des strings de produits,
+                    Post : Retourner une liste des objets qui sont disponibles, dans l'ordre croissant des rayons dans lequel ils se trouvent.
+
+                    """
+                    #A implémenter
+                    pass
+
+                def buy_item(self,product_name):
+                    """
+                    Pre  : product_name : string d'un nom d'un produit,
+                           #ATTENTION en MINUSCULE
+
+                    Post : Return True si le produit a pu etre achete, s'il existe et que la quantité > 0.
+                           Return False si le produit n'a pas pu être acheté, s'il n'existe pas ou si la quantité = 0.
+                    """
+                    #A implémenter
+                    pass
+        language: python
+        header: ''
+        name: ''
+        type: code
+stored_submissions: 0
+submission_limit:
+    amount: -1
+    period: -1
+weight: 1.0
