@@ -115,7 +115,7 @@ class Test_GroceryShopping(unittest.TestCase):
         except Exception as e:
             self.fail("""
             Vôtre fonction 'add_item' a provoqué l'exception {} aprés un appel 
-            avec une instance de la classe Product """.format(e, arg_restock, arg_init))
+            avec une instance de la classe Product """.format(e))
 
         # Test les ajouts
         self.assertEqual(test1, 2, rep.format(test1_msg, test1, 2))
