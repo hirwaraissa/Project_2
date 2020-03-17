@@ -58,18 +58,18 @@ Si le contenu du fichier est écrit dans le mauvais format, la fonction doit ret
 Question 3 : GROCERY SHOPPING:
 
 
-Voici les divers changement effectué sur cet exercice depuis la lecture des reviews : 
+Voici les divers changements effectués sur cet exercice depuis la lecture des reviews : 
 
 * Changement de la langue de l'énoncé. L’énoncé initiale était écrite en anglais, donc nous avons du changer la langue utilisé pour faciliter la compréhension.
   Toujours dans ce contexte nous avons ajouté des exemples pour qu'élève puisse directement voir à quoi nous  attendons de son implémentation.
 
-* Diminuer la difficulté. Pour certaines fonctions la spécifications ne donnent pas directement une idée de comment les implémenter,
+* Diminuer la difficulté. Pour certaines fonctions les spécifications ne donnent pas directement une idée de comment les implémenter,
   donc nous avons opté pour des méthodes dont l'implémentation est plus intuitif sans pour autant changer le contenu de l'exercice.
 
 * Changer les specifications des méthodes. Comme cité dans le point précédente, les spécifications n’était pas clair donc nous avons choisi de le rendre le plus clair
   possible sans évidemment dévoiler la réponse.
 
-* Les feedbacks. Pour certaines tests le feedback n’était pas adaptés, ainsi nous avons essayé de rendre le plus spécifique possible les feedbacks.
+* Les feedbacks. Pour certaines tests les feedbacks n’étaient pas adaptés, ainsi nous avons essayé de rendre le plus spécifique possible les feedbacks.
 
 * Les cas critiques. Vu que l'exercice est Objet Oriented, il y a quelques cas critiques soulevés par certaines reviews nous les avons ajouté dans la spécification 
   et nous avons trouvé une manière de les traiter.
